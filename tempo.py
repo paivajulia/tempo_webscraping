@@ -12,10 +12,7 @@ def parser_text(text):
     return text.split('">')[1].split('</')[0]
 
 htmldata = getdata("https://weather.com/en-IN/weather/today/l/25.59,85.14?par=google&temp=c/") 
-  
 soup = BeautifulSoup(htmldata, 'html.parser') 
-  
-##print(soup.prettify())
 
 current_temp = soup.find_all("span", class_="CurrentConditions--tempValue--3a50n") 
 chances_rain = soup.find_all("div", class_= "CurrentConditions--phraseValue--2Z18W") 
